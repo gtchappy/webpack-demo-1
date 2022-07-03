@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@webpack-cli/serve": "^1.7.0",
     "css-loader": "^3.6.0",
     "dart-sass": "^1.23.7",
     "file-loader": "^5.0.2",
@@ -13,9 +14,10 @@
     "stylus-loader": "^3.0.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.11.3"
   },
   "scripts": {
+    "start": "webpack-dev-server --open",
     "build": "rm -rf dist && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
