@@ -18,14 +18,26 @@ module.exports = {
     module: {
         rules: [
             {
+              test:/\.(png|svg|jpg|gif)$/,
+              use:["file-loader"]
+            },
+            {
+                test: /\.styl$/,
+                loader: ['style-loader', 'css-loader', 'stylus-loader'], // style --> css
+            },
+            {
+                test: /\.less$/,
+                loader: ['style-loader', 'css-loader', 'less-loader'], // less --> css
+            },
+            {
                 test: /\.scss$/i,
                 use: [
-                    "style-loader",
-                    "css-loader",
+                    "style-loader", // js字符串 --> style标签
+                    "css-loader",//css --> js字符串
                     {
-                        loader: "sass-loader",
+                        loader: "sass-loader",//sass --> css
                         options: {
-                            implementation:require('dart-sass')
+                            implementation: require('dart-sass')
                         }
                     },
                 ],
